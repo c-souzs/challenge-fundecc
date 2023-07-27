@@ -9,6 +9,7 @@ export const Label = styled.label`
 `
 
 export const Input = styled.input`
+  width: 100%;
   font-size: 1.125rem;
   font-family: 'Roboto', sans-serif;
   border-radius: 4px;

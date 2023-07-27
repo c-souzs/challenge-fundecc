@@ -1,6 +1,5 @@
 // Hooks
 import { useEffect, useState } from 'react'
-import CepFormHeader from './Header'
 import useFetch from '../../hooks/useViaCep'
 
 // Styles
@@ -15,9 +14,10 @@ import FormErrorMessage from '../ui/Form/ErrorMessage'
 import FormButtonNext from '../ui/Form/Button/Next'
 import Input from '../ui/Form/Input'
 import maskCep from '../../utils/maskCep'
+import FormHeader from '../ui/Form/Header'
 
-export default function CepForm({ updateDataCep }) {
-  const [cep, setCep] = useState('')
+export default function CepForm({ cepTyped, updateDataCep, nextStep }) {
+  const [cep, setCep] = useState(cepTyped)
   const [errorCep, setErrorCep] = useState(null)
 
   const { data, error, loading, request } = useFetch({
@@ -46,16 +46,24 @@ export default function CepForm({ updateDataCep }) {
     }
 
     setCep(maskCep(cep))
-    request(cep)
+
+    if (cepTyped !== cep) request(cep)
+    else nextStep()
   }
 
   useEffect(() => {
-    if (!error && data) updateDataCep(data)
-  }, [data, error, updateDataCep])
+    if (!error && data) {
+      updateDataCep(data)
+      nextStep()
+    }
+  }, [data, error, updateDataCep, nextStep])
 
   return (
-    <S.Container>
-      <CepFormHeader />
+    <>
+      <FormHeader
+        title="Preencha seu CEP"
+        description="Vamos buscar algumas informações para facilitar seu cadastro."
+      />
       <form onSubmit={handleSubmitCep}>
         <Input
           label="Cep"
@@ -73,6 +81,6 @@ export default function CepForm({ updateDataCep }) {
           <FormButtonNext />
         </S.ContainerButton>
       </form>
-    </S.Container>
+    </>
   )
 }

@@ -8,8 +8,16 @@ export const Section = styled.section`
 `
 
 export const Container = styled.div`
-  max-width: 72rem;
-  width: 100%;
+  max-width: 48rem;
   margin: 0 auto;
+  width: 100%;
   padding: 0 1rem;
+`
+export const ContainerActions = styled.div`
+  width: 100%;
+  margin-top: 32px;
+  display: flex;
+  gap: 32px;
+  justify-content: end;
+  align-items: end;
 `
