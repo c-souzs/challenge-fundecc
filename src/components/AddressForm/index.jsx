@@ -11,7 +11,7 @@ import GroupRequired from './GroupRequired'
 import GroupOptional from './GroupOptional'
 import FormErrorMessage from '../ui/Form/ErrorMessage'
 import hasEmptyKey from '../../utils/hasEmptyKey'
-import FormHeader from '../ui/Form/Header'
+import HeaderDiv from '../ui/HeaderDiv'
 
 export default function AddressForm({
   dataCep,
@@ -44,7 +44,7 @@ export default function AddressForm({
 
   return (
     <>
-      <FormHeader
+      <HeaderDiv
         title="Complete as informações do seu endereço"
         description={
           !hasEmptyKey(dataCep)

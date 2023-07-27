@@ -58,6 +58,11 @@ function App() {
     setCurrentStep(currentStep - 1)
   }
 
+  function resetStep() {
+    setCurrentStep(0)
+    setDataCep(templateDataCep)
+  }
+
   const componentsStepsAddress = [
     <CepForm
       cepTyped={dataCep.cep}
@@ -74,7 +79,7 @@ function App() {
       nextStep={nextStep}
       key="addressform"
     />,
-    <Finish dataCep={dataCep} key="finishaddress" />,
+    <Finish dataCep={dataCep} resetStep={resetStep} key="finishaddress" />,
   ]
 
   return (

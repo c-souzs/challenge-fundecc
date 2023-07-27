@@ -14,7 +14,7 @@ import FormErrorMessage from '../ui/Form/ErrorMessage'
 import FormButtonNext from '../ui/Form/Button/Next'
 import Input from '../ui/Form/Input'
 import maskCep from '../../utils/maskCep'
-import FormHeader from '../ui/Form/Header'
+import HeaderDiv from '../ui/HeaderDiv'
 
 export default function CepForm({ cepTyped, updateDataCep, nextStep }) {
   const [cep, setCep] = useState(cepTyped)
@@ -60,7 +60,7 @@ export default function CepForm({ cepTyped, updateDataCep, nextStep }) {
 
   return (
     <>
-      <FormHeader
+      <HeaderDiv
         title="Preencha seu CEP"
         description="Vamos buscar algumas informações para facilitar seu cadastro."
       />
