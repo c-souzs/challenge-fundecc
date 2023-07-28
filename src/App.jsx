@@ -32,9 +32,10 @@ function App() {
     })
   }
 
-  // Controla as informações que o usuário edita
+  // Controla as informações do AddressForm
   const [dataCepForm, setDataCepForm] = useState(dataCep)
 
+  // Atualiza as informações do AddressForm, a medida que o usuário vai fazendo alterações
   function updateKeyDataCepForm(key, value) {
     setDataCepForm((old) => ({
       ...old,
@@ -47,7 +48,7 @@ function App() {
     setDataCepForm(dataCep)
   }, [dataCep])
 
-  // Controla a etapa do fluxo do formulário
+  // Armazena a etapa atual do fluxo do formulário
   const [currentStep, setCurrentStep] = useState(0)
 
   function nextStep() {
@@ -62,6 +63,11 @@ function App() {
     setCurrentStep(0)
     setDataCep(templateDataCep)
   }
+
+  // Atualiza o titulo da página
+  useEffect(() => {
+    document.title = 'Desafio FUNDECC | Caio Souza'
+  }, [])
 
   const componentsStepsAddress = [
     <CepForm

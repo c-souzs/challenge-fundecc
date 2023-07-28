@@ -20,6 +20,7 @@ export default function CepForm({ cepTyped, updateDataCep, nextStep }) {
   const [cep, setCep] = useState(cepTyped)
   const [errorCep, setErrorCep] = useState(null)
 
+  // Reponsável por fazer a requisição para a API, retornando a função que faz a requisição, e os estados de erro e carregando
   const { data, error, loading, request } = useFetch({
     messageError:
       'Erro ao buscar informações sobre o CEP. Verifique os campos e tente novamente.',
@@ -51,6 +52,7 @@ export default function CepForm({ cepTyped, updateDataCep, nextStep }) {
     else nextStep()
   }
 
+  // Atualiza o dataCep com as informações da API
   useEffect(() => {
     if (!error && data) {
       updateDataCep(data)

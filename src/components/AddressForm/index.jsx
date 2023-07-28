@@ -23,7 +23,7 @@ export default function AddressForm({
 }) {
   const [showAlertInputRequired, setShowAlertInputRequired] = useState(false)
 
-  // Valida os dados que o usuário atualizou
+  // Valida se os campos obrigatórios foram preenchidos e atualiza o dataCep
   function handleSubmitAddress(e) {
     e.preventDefault()
 
@@ -48,8 +48,8 @@ export default function AddressForm({
         title="Complete as informações do seu endereço"
         description={
           !hasEmptyKey(dataCep)
-            ? 'Todos os campos do seu endereço já estão completo. Clique em avançar para finalizar.'
-            : 'Preencha todos os campos obrigatórios para avançar.'
+            ? 'Todos os campos do seu endereço já estão completos, graças à API ViaCep. Clique em avançar para prosseguir.'
+            : 'Conseguimos algumas informações do seu endereço graças à API ViaCep, mas há alguns campos incompletos. Para prosseguir, faça o preenchimento dos campos obrigatórios.'
         }
       />
       <form onSubmit={handleSubmitAddress}>

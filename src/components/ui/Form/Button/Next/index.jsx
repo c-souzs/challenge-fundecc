@@ -8,7 +8,7 @@ export default function FormButtonNext({ ...rest }) {
   return (
     <S.Button {...rest}>
       Avançar
-      <CaretRight size={32} color="#2FC790" />
+      <CaretRight size={32} color="#14b8a6" />
     </S.Button>
   )
 }

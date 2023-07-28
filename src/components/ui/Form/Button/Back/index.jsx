@@ -7,7 +7,7 @@ import { CaretLeft } from '@phosphor-icons/react'
 export default function FormButtonBack({ ...rest }) {
   return (
     <S.Button {...rest}>
-      <CaretLeft size={32} color="#e54" />
+      <CaretLeft size={32} color="#ef4444" />
       Voltar
     </S.Button>
   )

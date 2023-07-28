@@ -1,7 +1,9 @@
+// Styles
+import * as S from './styles'
+
+// Components
 import FormButtonReturn from '../ui/Form/Button/Return'
 import HeaderDiv from '../ui/HeaderDiv'
-
-import * as S from './styles'
 
 export default function Finish({ dataCep, resetStep }) {
   const {
@@ -22,7 +24,7 @@ export default function Finish({ dataCep, resetStep }) {
     <>
       <HeaderDiv
         title="Informações de endereço 🏠"
-        description="Essas são suas informações de endereço."
+        description="Agora sim, suas informações de endereço estão completas. Parabéns! Caso deseje buscar informações de um novo endereço, clique em Recomeçar."
       />
       <S.AddressMain>
         <S.Paddress>

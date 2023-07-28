@@ -14,6 +14,6 @@ export const Title = styled.h1`
     height: 3px;
     width: 32px;
     border-radius: 4px;
-    background-color: #2fc790;
+    background-color: var(--color-primary);
   }
 `

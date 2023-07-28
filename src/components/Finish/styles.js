@@ -7,8 +7,8 @@ export const AddressMain = styled.div`
 `
 
 export const Paddress = styled.p`
-  font-size: 1.25rem; /* 20px */
-  line-height: 1.75rem; /* 28px */
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 `
 
 export const ListCuriosities = styled.ul`

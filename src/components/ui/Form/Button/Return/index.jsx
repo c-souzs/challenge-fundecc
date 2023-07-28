@@ -8,7 +8,7 @@ export default function FormButtonReturn({ ...rest }) {
   return (
     <S.Button {...rest}>
       Recomeçar
-      <ArrowBendRightUp size={32} color="#2fc790" />
+      <ArrowBendRightUp size={32} color="#14b8a6" />
     </S.Button>
   )
 }

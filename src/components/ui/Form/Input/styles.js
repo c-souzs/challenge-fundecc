@@ -28,6 +28,6 @@ export const Input = styled.input`
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    border-color: #2fc790;
+    border-color: var(--color-primary);
   }
 `
